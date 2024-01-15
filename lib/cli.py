@@ -49,7 +49,7 @@ def menu():
     console.print("       VVVV               VVVV        ")
     console.print("       (__)               (__)")
     console.print("        \ \               / /")
-    console.print("         \ \   \\|||//   / /")
+    console.print("         \ \    \\|||//   / /")
     console.print("          > \   _   _   / <")
     console.print("           > \ / \ / \ / <", style="bold green")
     console.print("             > \\_o_o_// <")
