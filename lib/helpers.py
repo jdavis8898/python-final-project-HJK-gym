@@ -140,3 +140,5 @@ def delete_trainer():
         print(f"Trainer {first_name} has been deleted.")
     else:
         print("Trainer not found.")
+
+
