@@ -141,4 +141,30 @@ def delete_trainer():
     else:
         print("Trainer not found.")
 
+def delete_location():
+    method = input("Delete by ID(1) or City Name(2)? Enter 1 or 2: ")
 
+    if method == "1":
+        location_id = input("Enter the location ID: ")
+        try:
+            location_id = int(location_id)
+            location = Location.find_by_id(location_id)
+            if location:
+                location.delete()
+                print(f"Location with ID {location_id} has been deleted.")
+            else:
+                print("Location not found.")
+        except ValueError:
+            print("Invalid ID format. Please enter a numerical ID.")
+
+    elif method == "2":
+        city = input("Enter the location's city name: ")
+        location = Location.find_by_name(city)
+        if location:
+            location.delete()
+            print(f"Location in {city} has been deleted.")
+        else:
+            print("Location not found or city name does not match.")
+
+    else:
+        print("Invalid option selected.")

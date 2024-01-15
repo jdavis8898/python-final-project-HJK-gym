@@ -72,11 +72,11 @@ class Location:
             DELETE FROM locations
             WHERE id = ?
         """
-
         CURSOR.execute(sql, (self.id,))
         CONN.commit()
+        if self.id in type(self).all:
+            del type(self).all[self.id]
 
-        del type(self).all[self.id]
         self.id = None
     
     @classmethod 
